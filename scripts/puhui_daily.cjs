@@ -161,7 +161,7 @@ function buildTelegramSummary(markdown, articleTitle, articleUrl) {
   let inStockSection = false;
   for (const l of lines) {
     if (l.startsWith('## ')) {
-      inStockSection = !!stripHtml(l).match(/今日提到個股|📌.*個股/);
+      inStockSection = !!stripHtml(l).match(/個股/);
       continue;
     }
 
