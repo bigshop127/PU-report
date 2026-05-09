@@ -305,7 +305,7 @@ async function fetchPressPlayArticle(url) {
     }
 
     const page = await context.newPage();
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 40000 });
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
     // 擷取文章正文（優先用 .article-content，fallback 用 .article-main-content）
     const content = await page.evaluate(() => {
